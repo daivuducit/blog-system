@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: blog-system
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_system?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Bangkok
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:change-me}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-change-me-at-least-32-characters}
+    expiration-ms: 3600000
